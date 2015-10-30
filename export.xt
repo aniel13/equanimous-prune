@@ -4,8 +4,6 @@
 SUUID="0"
 FBOX[2]="/usr/share/fluxbox/styles/" 
 FBOX[1]="$HOME/.fluxbox/styles/" 
-FBOX[3]="/usr/share/blackbox/styles/" 
-FBOX[4]="/usr/share/openbox/themes" 
 
 
 if [ $UID -ne $SUUID ] ; then echo  "$USER, sudo does /usr/share and font cp." 
@@ -23,22 +21,9 @@ if [ $UID -ne $SUUID ] ; then echo  "$USER, sudo does /usr/share and font cp."
 		      cp -vr ../PinkInside -t ${FBOX[2]}
 		     fi
 	     fi
-	      type -P blackbox
-	    if [ $? -eq $SUUID ] ; then echo "blackbox's there"
-		     if [ -d ${FBOX[3]} ] ; then echo "good" 
-			     cp -vr ../PinkInside -t ${FBOX[3]}
-		     fi
-	     fi
-	 #the openbox.. well if reality contradicts my predictions 
-     #pleas correct this copypaste
-    #its not there..   
-             
-	      type -P openbox
-	    if [ $? -eq $SUUID ] ; then echo "openbox's there"
-		     if [ -d ${FBOX[4]} ] ; then echo "good" 
-			     cp -vr ../PinkInside -t ${FBOX[4]}
-		     fi
-	     fi
+	       # really thought that fluxbox where theme compatible with 
+	       #all the other *box's, turns out not really.. there go 50 line, 
+	       #but least keep this spread slim. 
 	  #how does you check for fonts
 	 #not actually mandatory since it might as use whatever it has to work with 
 	#damnit then will has to ask, intended as a click safe simple something..
