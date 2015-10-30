@@ -1,0 +1,124 @@
+#!/bin/bash
+
+#it's ridiculous
+SUUID="0"
+FBOX[2]="/usr/share/fluxbox/styles/" 
+FBOX[1]="$HOME/.fluxbox/styles/" 
+FBOX[3]="/usr/share/blackbox/styles/" 
+FBOX[4]="/usr/share/openbox/themes" 
+
+
+if [ $UID -ne $SUUID ] ; then echo  "$USER, sudo does /usr/share and font cp." 
+		if [ -d ${FBOX[1]} ] ; then echo "~/.flux.. --! there" 
+			cp -vr ../PinkInside -t ${FBOX[1]} 
+		fi
+		#my copy of blackbox doesn't seem to have user style folder 
+		#so that'll go to /usr/share
+     else echo "user does ~/.." 
+	    # if [ -f $PATHfluxbox ] ; then, for some reason 
+	    # doesn't seem have desirable effects.. so will 
+	    type -P fluxbox
+	    if [ $? -eq $SUUID ] ; then echo "fluxbox's there"
+		     if [ -d ${FBOX[2]} ] ; then echo "good" 
+		      cp -vr ../PinkInside -t ${FBOX[2]}
+		     fi
+	     fi
+	      type -P blackbox
+	    if [ $? -eq $SUUID ] ; then echo "blackbox's there"
+		     if [ -d ${FBOX[3]} ] ; then echo "good" 
+			     cp -vr ../PinkInside -t ${FBOX[3]}
+		     fi
+	     fi
+	 #the openbox.. well if reality contradicts my predictions 
+     #pleas correct this copypaste
+    #its not there..   
+             
+	      type -P openbox
+	    if [ $? -eq $SUUID ] ; then echo "openbox's there"
+		     if [ -d ${FBOX[4]} ] ; then echo "good" 
+			     cp -vr ../PinkInside -t ${FBOX[4]}
+		     fi
+	     fi
+	  #how does you check for fonts
+	 #not actually mandatory since it might as use whatever it has to work with 
+	#damnit then will has to ask, intended as a click safe simple something..
+	#bullshit, allgood since user does the possibly smallest damage, so done. 
+type -P fc-list 
+ if [ $? -eq $SUUID ] ; then #I'm concerned it might not exist
+   fc-list | grep "A_Lolita_Scorned.ttf" 
+       if [ $? -ne $SUUID ] ; then echo "decided to copy" 
+	       #since can't know the random dir you might use for fonts gonna make it. 
+echo " #since can't know the random dir you might use for fonts gonna make it."
+#so that you know.
+	     mkdir -pv /usr/share/fonts/fonties/ && cp -v ./fonts/A_Lolita_Scorned.ttf -t /usr/share/fonts/fonties/ && fc-cache dir /usr/share/fonts/fonties/ 
+	     #have no clue if there are some alts to fc, I mean 
+	    #might be that it's not there, anyway
+     else echo "has this font, good."  
+     fi
+     fi
+ fc-list | grep "ElliotSix" 
+       if [ $? -ne $SUUID ] ; then echo "decided to copy" 
+	       #since can't know the random dir you might use for fonts gonna make it. 
+echo " #since can't know the random dir you might use for fonts gonna make it."
+#so that you know.
+	     mkdir -pv /usr/share/fonts/fonties/ && cp -v ./fonts/ElliotSix.ttf -t /usr/share/fonts/fonties/ && fc-cache dir /usr/share/fonts/fonties/ 
+     fi
+	      fc-list | grep "FairyDustB.ttf" 
+       if [ $? -ne $SUUID ] ; then echo "decided to copy" 
+	       #since can't know the random dir you might use for fonts gonna make it. 
+echo " #since can't know the random dir you might use for fonts gonna make it."
+#so that you know.
+	     mkdir -pv /usr/share/fonts/fonties/ && cp -v ./fonts/FairyDustB.ttf -t /usr/share/fonts/fonties/ && fc-cache dir /usr/share/fonts/fonties/ 
+
+     fi
+ fc-list | grep "KOMTXTT_.ttf" 
+       if [ $? -ne $SUUID ] ; then echo "decided to copy" 
+	       #since can't know the random dir you might use for fonts gonna make it. 
+echo " #since can't know the random dir you might use for fonts gonna make it."
+#so that you know.
+	     mkdir -pv /usr/share/fonts/fonties/ && cp -v ./fonts/KOMTXTT_.ttf -t /usr/share/fonts/fonties/ && fc-cache dir /usr/share/fonts/fonties/ 
+
+	     #have no clue if there are some alts to fc, I mean 
+	    #might be that it's not there, anyway
+     else echo "has this font, good."  
+     fi
+fc-list | grep "belligerent.ttf" 
+       if [ $? -ne $SUUID ] ; then echo "decided to copy" 
+	       #since can't know the random dir you might use for fonts gonna make it. 
+echo " #since can't know the random dir you might use for fonts gonna make it."
+#so that you know.
+	     mkdir -pv /usr/share/fonts/fonties/ && cp -v ./fonts/belligerent.ttf -t /usr/share/fonts/fonties/ && fc-cache dir /usr/share/fonts/fonties/ 
+
+	     #have no clue if there are some alts to fc, I mean 
+	    #might be that it's not there, anyway
+     else echo "has this font, good."  
+     fi
+
+
+fi	
+
+# consistency of this thing good as of hot noodle soup.
+# So why bother, well had this sudden concern that some
+# might be unable to, copy stuff I guess, or simply couldn't 
+# be bothered to, but yet wants to have it, so here you go, 
+# fully clickable 
+# Concerning the theme itself now
+# It's my first attempt at this sort of thing, so you shouldn't
+# expect much and suggestions are anticipated, later will add 
+# mail box here for complains. Nevertheless had a blast at it, 
+# might even pick it up as a hobby. 
+# Few days back now, figured it be the time to get some work moving 
+# since my aggravation started to grow into general disappointment 
+# of the world and existence itself. Something had to be done, so 
+# I was sitting there staring into empty window of open editor with 
+# growing desperation. FLuxbox is my main windows manner I use and at
+# the time it had one of them dark themes, cool, but not good enough,
+# kept reminding me how couldn't find anything in suitable pink from 
+# all the stock of them online. Figured it can't be helped, for some 
+# productive distraction will mess around with it. The result is 
+# extended edition of original, which now are distorted beyond 
+# recognition in my attempts to figure out what did what and where 
+# it all fit in, but stated from theme named "Cambridge blood", or 
+# bloody, from which this file inherited 19x19 .xpm file formats,
+# mostly as I intended to sustain seemingly swift function and in 
+# my judgment good consistency. 
