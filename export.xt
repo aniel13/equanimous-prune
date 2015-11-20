@@ -1,0 +1,151 @@
+#!/bin/bash
+
+suuid="0"
+FBOX[2]="/usr/share/fluxbox/styles/" 
+FBOX[1]="$HOME/.fluxbox/styles/" 
+nyantime="./nyantemp.$$"
+nyancat='
+   o     +              o       +
+ +             o     +       +
+o       o   X         o           +
+ o   +           +        +
+      o     +       +        +   
+-_-_-_-_-_-_-_,------,     +        o 
+-_-_-_-_-_-_-_|   /\_/\        o
+-_-_-_-_-_-_-_|__( ^ .^)  +     +  
+-_-_-_-_-_-_-  ""  ""               +
+  o         o   +       o    o   
++      +                       +   
+    o         o       o     +     o
+ o           +       + 
+   +     o        o      +   o 
+'
+
+nyancat0='
+ X     o      +             o   
+    o             o     +        o 
+ +          +
+    +   o        X   o       +     o
+ o        +    o       +        +
+_-_-_-_-_-_-_-,------,      + 
+_-_-_-_-_-_-_-|   /\_/\  
+_-_-_-_-_-_-_-|__( ^ .^)  o     o  
+_-_-_-_-_-_-   ""  ""     
+ 0      +        +   0       +
+     o        +
+0        o         o      o     +
+   X          +       +
+ +    0     +    X   o        +   
+'
+nyancat1=' 
++      o     +      X      +   o   +
+    +            o    +             
+o           +
+     + +         +    +     +
+  o       o    +        o       o
+-_-_-_-_-_-_-_,------,      +      +
+-_-_-_-_-_-_-_|   /\_/\  
+-_-_-_-_-_-_-_|__( ^ .^)  +   o    
+-_-_-_-_-_-_-   ""  ""     
+ o        +      o   +    o   X   o
+    +         +
+o        o         o      +     o
+    o           +
+X      +     +        +    o     + 
+'
+
+
+
+
+! [[ "$1" = "nyanmode" ]] 
+if [ "$?" -eq "0" ] ; then 
+ if [ $UID -ne $suuid ] ; then echo  "$USER, sudo does /usr/share and font cp." 
+		if [ -d ${FBOX[1]} ] ; then echo "~/.fluxy's.. --! there" 
+			cp -vr ../PlasmaKitten -t ${FBOX[1]} 
+		fi
+		#fonts, well.. don't you needs suuid to mingle, no.. doesn't really..
+		#  I could swear by the blue heavens above, which we both adore 
+		# that this one one distro asked to sudo su fc-cahe, however 
+	      	# in present gravity of things I don't seem to have to. 
+		# Either way, user fits good for none font option. 	
+     else echo "user does ~/.." 
+	    # if [ -f $PATHfluxbox ] ; then, for some reason 
+	    # doesn't seem have desirable effects.. so will 
+	    type -p fluxbox
+	    if [ $? -eq $suuid ] ; then echo "fluxbox's there"
+		     if [ -d ${FBOX[2]} ] ; then 
+			     [ -d ${FBOX[2]}PlasmaKitten ] && echo "-${FBOX[2]}PlasmaKitten/- already present" || cp -vr ../PlasmaKitten -t ${FBOX[2]}
+	     	fi
+
+	     fi
+	       # really thought that fluxbox where theme compatible with 
+	       #all the other *box's, turns out not really.. there go 50 line, 
+	       #but least keep this spread slim. 
+	  #how does you check for fonts
+	 #not actually mandatory since it might as use whatever it has to work with 
+	#damnit then will has to ask, intended as a click safe simple something..
+	#bullshit, allgood since user does the possibly smallest damage, so done. 
+fc-list | grep "Aurinko.ttf" 
+       if [ $? -ne $suuid ] ; then echo "decided to copy" 
+	       #since can't know the random dir you might use for fonts gonna make it. 
+echo " #since can't know the random dir you might use for fonts gonna make it."
+#so that you know.
+	     mkdir -pv /usr/share/fonts/fonties/ && cp -v ./fonts/Aurinko.ttf -t /usr/share/fonts/fonties/ && fc-cache dir /usr/share/fonts/fonties/ 
+
+	     #have no clue if there are some alts to fc, I mean 
+	    #might be that it's not there, anyway
+     else echo "has this font, good."  
+     fi
+
+
+
+fi	
+else echo "nyanmode initiated..." 
+	touch $nyantime
+	trap "rm -f $nyantime" SIGINT SIGTERM
+  while [ -r $nyantime ] ; do  clear ; printf "$nyancat\n" && sleep 0.25 ; clear ; printf "$nyancat0\n" && sleep 0.25 ; clear; printf "$nyancat1\n" && sleep 0.25 ; done &
+if [ $UID -ne $suuid ] ; then echo  "$USER, sudo does /usr/share and font cp." 
+	type fluxbox 
+	[ $? = "0" ] && printf "fluxboxy alive\n" || printf "fluxy seems to be dead\n" 
+		if [ -d ${FBOX[1]} ] ; then
+			cp -r ../PlasmaKitten -t ${FBOX[1]}  
+		  rm -f $nyantime	
+	printf "I'll always be there for you <3\n" & sleep 0.55
+		fi
+	else printf "+----Sudo nyanmode! -----+\n"
+	type -p fluxbox
+	 [ $? -eq "0" ] && printf " alive" || printf "dead" 
+	 [ -d ${FBOX[2]} ] && cp -r ../PlasmaKitten -t ${FBOX[2]}
+	fc-list | grep "Aurinko.ttf" 
+	 [ $? != "0" ] && mkdir -p /usr/share/fonts/fonties/ && cp ./fonts/Aurinko.ttf -t /usr/share/fonts/fonties/ && fc-cache dir /usr/share/fonts/fonties/  && echo "copying.." || printf "nyanHappy"
+
+	 rm -f $nyantime
+ printf "I'll always be there for you <3\n" & sleep 0.55
+		# See the reason put that awkward sleep there is that 
+	       # other wise the promt comes out from the script all wrong, 
+	       # that is absent from those ps stuff, few stray nyancats bump out 
+	       # and I'd don't have a clue why that's so, idk.. give me a break
+	      # haven't been half year since I started to used Lineks, can't be 
+	     # helped.  And.. it doesn't actually help, there's spooky randomness
+	     # to this occurrence 
+	fi	
+fi
+#
+# it's nice recycling didn't thought it'll be of use. 
+# Don't really want to talk about why I made this theme. 
+# It's at part came from Kitten Chow cat food box,
+# don't own any animals really, but the box seemed appealing 
+# thus the title, trowed plasma into it cause cyan/blue reminiscent 
+# to me of that and how cool it reads after all.
+# Aimed at tiny titles with good clickability rate, my distorted 
+# clickability tests seems to hold that I managed that much. 
+# Maybe the toolbar could be even smaller.. 
+# Or some fonts.. Well, will keep it simple since feel satisfied 
+# with it. 
+#
+#### Please refer all your complains and suggestions to < gogoskullcats@gmail.com > 
+#
+#
+#
+#:wq
+
