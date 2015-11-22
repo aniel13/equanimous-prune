@@ -1,8 +1,8 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-# Normal Colors
 
+# Normal Colors
 Black='\e[0;30m'        # Black
 Red='\e[0;31m'          # Red
 Green='\e[0;32m'        # Green
@@ -80,11 +80,12 @@ function _exit()              # Function to run upon exit of shell.
     trap _exit EXIT
 
 	color_prompt=yes
-if [ $UID != "0" ] ; then 
-PS1="$BCyan  \@$White *\j$Green  ..-=\w=-...\n$Red \u$BYellow-inside-$BPurple\h: #!$Cyan\n"
+if [ $UID -eq "0" ] ; then 
+PS1="$BCyan  \@$White *\j$Green  ..-=$White\w$Green=-...\n$Red \u✔ $BYellow-inside-$BPurple\h: #!$Cyan\n"
 PS2="$White >..<"
  else
-PS1="$BCyan  \@$White *\j$Green  ..-=\w=-...\n$White *!$Red\u$BYellow-inside-$BPurple\h: #!$Cyan\n"
+PS1="$BCyan  \@$White *\j$Green  ..-=\w=-...\n$Red \u✔ $BYellow-inside-$BPurple\h♥ #!$Cyan\n"
+
 PS2="$White >..<"
 fi
 
@@ -160,7 +161,7 @@ function tempered() { find . -mtime -$1 -printf "%Tx\t\t%p\n" | sort -rg ; }
 
 function _exit()              #On exit 
 {
-	printf "${BRed}I'll be waiting for you \n  my beloved... \n" & sleep 2
+	printf "${BRed}I'll be waiting for you \n  my beloved... \n ♥ \n" & sleep 2
     }
     trap _exit EXIT
 

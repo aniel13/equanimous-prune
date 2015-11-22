@@ -58,8 +58,8 @@ plugins=(git)
 function tempered() { find . -mtime -$1 -printf "%Tx\t\t%p\n" | sort -rg ; }
 
  #On exit 
- _exit() {
-	echo "I'll be waiting for you \n \t\t my beloved... " 
+function _exit() {
+	echo "I'll be waiting for you \n \t\t my beloved... \n\t♥\n" 
     }
     trap _exit EXIT
 
