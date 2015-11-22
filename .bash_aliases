@@ -10,3 +10,6 @@ alias ler='awk "NR=='
 alias ls="ls -F"
 alias vi="vi -p"
 alias yadx="yad --font & yad --color &" 
+alias lsnew="ls -rl *(D.om[1,10])"
+alias lsold="ls -rtlh *(D.om[1,10])"
+alias lsold="ls -rtlh *(D.om[1,10])"
