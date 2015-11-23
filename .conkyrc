@@ -224,7 +224,14 @@ TEXT
 ${color8}$alignr${font ElliotSix:size=10}${time %I#!%M} 
 #${font Existence:size=9}${color 5A7CE7}${alignc}${execi 4 uptime -p }
   ${font Existence:size=9}${color 5A7CE7}${alignc}since last crash $uptime
- ${execi 2 tmp01="`uptime -p | awk '{print $2}'`" ; [[ $tmp01 < "9" ]] && echo "*mediocre" || echo "*we'll merge 💜 " }${font}
+# Omg!1! You know I wanted to feed this line into conky for a quite a 
+# while now, and it's so awesome now wee-ee 
+# Totally suck at shell, so I'm very happy with it. 
+# It's unbelievable how much fun it is. 
+# when I got at this never knew what awk thing was 
+# not to mention why on earth I might use it. fun.
+# integrate more output options? What!
+${font VL Gothic:size=9} ${execi 2 tmp0="12" ; tmp01="`uptime -p | awk '{print $2}'`" ; [ "$tmp01" -le "$tmp0" ] && echo "*mediocre ♥ " || echo "*we'll mergei ♡ " }${font}
 
 $alignr${color 53D3A2}${font Trade Winds:size=8} -$processes ${font}
 #${color}${alignc}${exec disp=${DISPLAY#:}; disp=${disp%.[0-9]}; cat $HOME/.desktop-session/desktop-code.$disp 2>/dev/null}
