@@ -231,7 +231,7 @@ ${color8}$alignr${font ElliotSix:size=10}${time %I#!%M}
 # when I got at this never knew what awk thing was 
 # not to mention why on earth I might use it. fun.
 # integrate more output options? What!
-${font VL Gothic:size=9} ${execi 2 tmp0="12" ; tmp01="`uptime -p | awk '{print $2}'`" ; [ "$tmp01" -le "$tmp0" ] && echo "*mediocre ♥ " || echo "*we'll mergei ♡ " }${font}
+${font VL Gothic:size=9} ${execi 2 brkpnt="12" ; uphrs="`uptime -p | awk '{print $2}'`" ; [ "$brkpnt" -gt "$uphrs" ] && echo "*mediocre ♥ " || echo "*we'll mergei ♡ " }${font}
 
 $alignr${color 53D3A2}${font Trade Winds:size=8} -$processes ${font}
 #${color}${alignc}${exec disp=${DISPLAY#:}; disp=${disp%.[0-9]}; cat $HOME/.desktop-session/desktop-code.$disp 2>/dev/null}
