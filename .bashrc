@@ -40,8 +40,17 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-# append to the history file, don't overwrite it
-shopt -s histappend
+# Shopts
+shopt -s cdspell
+shopt -s cdable_vars
+shopt -s checkhash
+shopt -s checkwinsize
+shopt -s sourcepath
+shopt -s no_empty_cmd_completion
+shopt -s cmdhist
+shopt -s histappend histreedit histverify
+shopt -s extglob       # Necessary for programmable completion.
+
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
@@ -182,6 +191,26 @@ function title {
 			    local -a cmd; cmd=(${(z)1})
 			        title "$cmd[1]:t" "$cmd[2,-1]"
 			}
+
+# Returns a color according to free disk space in $PWD.
+function disk_color()
+{
+	if [ ! -w "${PWD}" ] ; then
+		echo -en ${Red}
+	elif [ -s "${PWD}" ] ; then
+		local used=$(command df -P "$PWD" |
+		awk 'END {print $5} {sub(/%/,"")}')
+		if [ ${used} -gt 95 ]; then
+			echo -en ${ALERT}           # Disk almost full (>95%).
+		elif [ ${used} -gt 90 ]; then
+			echo -en ${BRed}            # Free disk space almost gone.
+		else
+			echo -en ${Green}           # Free disk space is ok.
+		fi
+			echo -en ${Cyan}
+			# Current directory is size '0' (like /proc, /sys etc).
+		fi
+		 }
 
 if [ -f /usr/bin/zsh ] ; then zsh 
 fi	

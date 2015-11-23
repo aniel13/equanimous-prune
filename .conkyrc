@@ -224,7 +224,7 @@ TEXT
 ${color8}$alignr${font ElliotSix:size=10}${time %I#!%M} 
 #${font Existence:size=9}${color 5A7CE7}${alignc}${execi 4 uptime -p }
   ${font Existence:size=9}${color 5A7CE7}${alignc}since last crash $uptime
- ${execi 2 uptime -p | awk '{print $2}' > tmp01 && [[ "`cat tmp01`" < "9" ]] && echo "*mediocre" && rm tmp01 || echo "*hardcore" && [ -f tmp01 ] && rm tmp01}${font}
+ ${execi 2 tmp01="`uptime -p | awk '{print $2}'`" ; [[ $tmp01 < "9" ]] && echo "*mediocre" || echo "*we'll merge 💜 " }${font}
 
 $alignr${color 53D3A2}${font Trade Winds:size=8} -$processes ${font}
 #${color}${alignc}${exec disp=${DISPLAY#:}; disp=${disp%.[0-9]}; cat $HOME/.desktop-session/desktop-code.$disp 2>/dev/null}
