@@ -81,10 +81,12 @@ esac
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
 #force_color_prompt=yes
+[ -d ~/DamnText ] && [ -d /media/Eidetic/DamnTexts ] && cp -u ~/DamnText/*.xt /media/Eidetic/DamnTexts/
 
 function _exit()              # Function to run upon exit of shell.
 {
 	echo -e "${BRed}I'll be waiting for you \n  my beloved... \n" & sleep 2
+	[ -d ~/DamnText ] && [ -d /media/Eidetic/DamnTexts ] && cp -u ~/DamnText/*.xt /media/Eidetic/DamnTexts/
     }
     trap _exit EXIT
 
@@ -151,8 +153,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-xt="~/xt.xt" 
-if [ -d ~/xt.xt ] ; then  PATH="$xt:$PATH" 
+xt="~/xt.xt/" 
+if [ -d ~/xt.xt/ ] ; then  PATH="$PATH:~/xt.xt/:" 
 fi
 #######*#######################*##############################
 ###*###############*###################Absolutely ############
@@ -164,6 +166,10 @@ export EDITOR=vi                          ####*#########*#####
 ###*###############*#################*###With#################
 ######*#####*##################*#####################theRest##
 alias su="sudo su"
+
+#Envies will go here.. 
+
+
 
 #Recently tempered -$1 days 
 function tempered() { find . -mtime -$1 -printf "%Tx\t\t%p\n" | sort -rg ; }
