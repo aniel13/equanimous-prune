@@ -59,7 +59,7 @@ function tempered() { find . -mtime -$1 -printf "%Tx\t\t%p\n" | sort -rg ; }
 
  #On exit 
 function _exit() {
-	echo "I'll be waiting for you \n \t\t my beloved... \n\t♥\n" 
+	clear && echo "I'll be waiting for you \n \t\t my beloved... \n\t♥\n" 
     }
     trap _exit EXIT
 

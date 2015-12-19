@@ -176,7 +176,7 @@ function tempered() { find . -mtime -$1 -printf "%Tx\t\t%p\n" | sort -rg ; }
 
 function _exit()              #On exit 
 {
-	printf "${BRed}I'll be waiting for you \n  \t\t my beloved... \n\t♥\n\n" & sleep 2
+	clear && printf "${BRed}I'll be waiting for you \n  \t\t my beloved... \n\t♥\n\n" & sleep 2
     }
     trap _exit EXIT
 

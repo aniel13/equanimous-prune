@@ -27,7 +27,7 @@ xftfont SF Cartoonist Hand :regular:size=9
 #xftfont DejaVu Sans:size=9
 
 # Create own window instead of using desktop (required in nautilus, pcmanfm and rox desktops)
-own_window no 
+own_window no
 own_window_transparent yes
 own_window_hints undecorated,sticky,skip_taskbar
 
@@ -231,8 +231,9 @@ ${color8}$alignr${font ElliotSix:size=10}${time %I#!%M}
 # when I got at this never knew what awk thing was 
 # not to mention why on earth I might use it. fun.
 # integrate more output options? What!
-${font VL Gothic:size=9} ${execi 2 brkpnt="12" ; uphrs="`uptime -p | awk '{print $2}'`" ; [ "`uptime -p | awk '{print $3}'`" != "minutes" ] && [ "$brkpnt" -le "$uphrs" ] && echo "*we'll mergei ♡ " || echo "*mediocre  ♥ "}${font}
+#${font Twlg Typo:size=9} ${execi 2 brkpnt="12" ; uphrs="`uptime -p | awk '{print $2}'`" ; [ "`uptime -p | awk '{print $3}'`" != "minutes" ] && [ "$brkpnt" -le "$uphrs" ] && echo "*loves you back ♡ " || echo "*mediocre  ♥ "}${font}
 
+${font VL Gothic:size=9} ${execi 2 [ "`date +%Y-%m-%d`" -eq "`who -l | awk '{print $3}'`" ] && echo "*mediocre  ♥ " || echo "*Loves you back ♡ " } ${font} 
 $alignr${color 53D3A2}${font Trade Winds:size=8} -$processes ${font}
 #${color}${alignc}${exec disp=${DISPLAY#:}; disp=${disp%.[0-9]}; cat $HOME/.desktop-session/desktop-code.$disp 2>/dev/null}
 #${color}${alignc}${exec uname -r}
@@ -256,10 +257,12 @@ ${color 1865B6}                  ${totalup ppp0}
 #${color 3DD48D}- $processes
 #${color 005C69}$processes
 #${color}${alignr}${color8} / Total
-${color}  swapiness${alignr}${color 2A3D93} $swap ${color3}${color}    $swapmax
-${color }infected${alignr}${fs_used /} ${color3}   ${color} ${fs_size /}
- ${font SF Cartoonist Hand :regular:size=10}${color 43BA78} fuseblkiesi ${color 0CF070} ${alignc}${pre_exec mount -l -t fuseblk | wc -l} 
-${color 43BA78} ext4ies ${alignc}${color 0CF070} ${pre_exec mount -l -t ext4 | wc -l} 
+${color}  swapiness${alignc}${color 2A3D93} $swap ${color3}${color}  
+${color }contaminated ${alignr}${color 2EAFE2} ${fs_used /}${color 31CF9B}    safe ${color FF0ABA}${fs_free /}
+#${hr 0}
+${sysname} 
+#${font SF Cartoonist Hand :regular:size=10}${color 43BA78} fuseblkiesi ${color 0CF070} ${alignc} ${exec sleep 240 && uptime -p}
+#${color 43BA78} ext4ies ${alignc}${color 0CF070} ${exec while : ; do sleep 28800 && mount -l -t ext4 | wc -l ; done} 
 #${color3}${alignc}${execi 1000 persist-enabled}
 #${execi 1000 acpi 2>/dev/null | grep -q . && echo "Batt: "}${execi 10 acpi -b 2>/dev/null | cut -d" " -f3,4 | sed 's/,$//'}
 #
