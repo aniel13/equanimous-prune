@@ -1,0 +1,56 @@
+i: /usr/share/wallpapers/wbarbackskullies.png
+c: wbar --bpress --vbar --pos right --isize 27 --falfa 70 --filter 1 --fc 0xffdf00ff
+t: /usr/share/fonts/fonties/fonties/truetype/fonties/ElliotSix/10
+
+i: /usr/share/icons/iconHoarding/crybloodico.png
+c: /usr/bin/lilyterm
+t: lily
+
+i: /usr/share/icons/iconHoarding/pinkskully.png
+c: /usr/bin/mrxvt -e  sudo umts-panel
+t: wire
+
+i: /usr/share/icons/hicolor/22x22/apps/midori.png
+c: /usr/bin/midori
+t: midori
+
+i: /usr/share/icons/iconHoarding/anyeyeico79x79.png
+c: /usr/bin/firefox
+t: ice
+
+i: /usr/share/icons/iconHoarding/squigllyico.png
+c: /usr/bin/nm-applet
+t: nm-applet
+
+i: /usr/share/icons/iconHoarding/CutieSkullieCo.png
+c: /usr/bin/mrxvt -e nice -n 19 mocp & 
+t: play
+
+i: /usr/lib/python2.7/dist-packages/turpial/data/pixmaps/turpial.png
+c: /usr/bin/turpial
+t: turpial
+
+i: /usr/share/icons/iconHoarding/squiglliesdraco.png
+c: /usr/bin/comix
+t: comix
+
+i: /usr/share/icons/iconHoarding/mailulain.png
+c: /usr/bin/sylpheed
+t: sylph
+
+i: /usr/share/icons/hicolor/128x128/apps/spacefm-128-pyramid-green.png
+c: /usr/bin/mrxvt -e sudo /usr/bin/spacefm
+t: spacefm
+
+i: /usr/share/icons/iconHoarding/BlackRedSkullco.png
+c: /usr/bin/pcmanfm -n
+t: pcManfm
+
+i: /usr/share/icons/iconHoarding/nekoCo.png
+c: /usr/bin/roxterm
+t: roX
+
+i: /usr/share/icons/iconHoarding/HeartEyeBlackSkullco.png
+c: wbar-config
+t: wbar-config
+

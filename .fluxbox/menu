@@ -1,0 +1,118 @@
+[begin] (fluxbox)
+
+[exec]   (lily) {nice -n 13 /usr/bin/lilyterm}
+[exec] (kill) {xkill} #</usr/share/icons/iconHoarding/tinyicoskully20x20.png>
+
+[submenu] (wire)
+	[exec]   (midori) {/usr/bin/midori} </usr/share/icons/hicolor/16x16/apps/midori.png>
+            [exec] (Sylpheed) {/usr/bin/sylpheed} </usr/share/pixmaps/sylpheed-debian.xpm>
+	[exec] (Turpial) {turpial} </usr/share/pixmaps/turpial.png>
+            [exec] (Telnet) { x-terminal-emulator -T "Telnet" -e /usr/bin/telnet} <>
+	[exec] (FileZilla) {/usr/bin/filezilla} </usr/share/pixmaps/filezilla.xpm>
+            [exec] (qBittorrent) {/usr/bin/qbittorrent} </usr/share/icons/hicolor/16x16/apps/qbittorrent.png>
+            [exec] (Transmission) {/usr/bin/transmission-gtk} </usr/share/pixmaps/transmission.xpm>
+	[exec] (HexChat) {/usr/bin/hexchat} </usr/share/pixmaps/hexchat.xpm>
+	[exec] (modem) {/usr/bin/modem-manager-gui} </usr/share/modem-manager-gui/pixmaps/modem-manager-gui.png>
+	[exec] (dwb) {nice -n 19 /usr/bin/dwb} <> 
+[end]
+
+ [submenu] (Education) {}
+         [exec] (Anki) {/usr/bin/anki} </usr/share/pixmaps/anki.xpm>
+         [exec] (Artha) {nice -n 19 artha} </usr/share/pixmaps/artha.png>
+	[exec] (kiten) {/usr/bin/kiten} </usr/share/icons/hicolor/16x16/apps/kiten.png>
+         [exec] (Kana test) {/usr/bin/kanatest} </usr/share/pixmaps/kanatest.xpm>
+# [exec] (goldendict) {/usr/local/bin/goldendict} </usr/share/icons/Faenza/apps/16/goldendict.png>
+	 [exec] (tipp10) {/usr/bin/tipp10} <>
+      [end]
+
+[submenu] (develop) 
+	[exec] (CodeLite) {/usr/bin/codelite} </usr/share/pixmaps/codelite.xpm>
+         [exec] (eric) {/usr/bin/eric} </usr/share/pixmaps/eric.xpm>
+         [exec] (Geany) {/usr/bin/geany} </usr/share/pixmaps/geany.xpm>
+         [exec] (Python (v2.7\)) { x-terminal-emulator -T "Python (v2.7)" -e /usr/bin/python2.7} </usr/share/pixmaps/python2.7.xpm>
+         [exec] (Python (v3.4\)) { x-terminal-emulator -T "Python (v3.4)" -e /usr/bin/python3.4} </usr/share/pixmaps/python3.4.xpm>
+         [exec] (Ruby (irb1.9.1\)) { x-terminal-emulator -T "Ruby (irb1.9.1)" -e /usr/bin/irb1.9.1} <>
+[end]
+
+[submenu] (science) 
+	[submenu] (Astronomy) {}
+            [exec] (Celestia (GLUT\)) {/usr/bin/celestia-glut} <>
+         [end]
+         [submenu] (Geoscience) {}
+            [exec] (wmMoonClock) {nice -n 19 /usr/bin/wmMoonClock} <>
+         [end]
+         [submenu] (Mathematics) {}
+            [exec] (Bc) { x-terminal-emulator -T "Bc" -e /usr/bin/bc} <>
+            [exec] (Gnuplot) { x-terminal-emulator -T "Gnuplot" -e /usr/bin/gnuplot} <>
+            [exec] (Qalculate) {/usr/bin/qalculate-gtk} <>
+[end]
+	[exec] (kalzium) {nice -n 19 /usr/bin/kalzium} </usr/share/kde4/apps/kalzium/icons/hicolor/16x16/actions/orbits.png>
+[end]
+
+[submenu] (terminal) {}
+	[exec] (ROXTerm) {/usr/bin/roxterm} </usr/share/pixmaps/roxterm.xpm>
+	[exec] (terminology) {/usr/bin/terminology} <>
+	[exec]   (lily) {/usr/bin/lilyterm}
+[end]
+
+[submenu] (View) {}
+         [exec] (E-book reader) {FBReader} <nice -n 19 /usr/share/icons/oxygen/16x16/mimetypes/application-epub+zip.png>
+	[exec] (comix) {nice -n 19 /usr/bin/comix} </opt/comix-4.0.4/images/16x16/comix.png>
+         [exec] (Evince) {/usr/bin/evince} </usr/share/icons/HighContrast/16x16/apps/evince.png>
+	[exec] (gimp) {/usr/bin/gimp} </usr/share/pixmaps/gimp.xpm>
+         [exec] (Mirage) {mirage} #</usr/share/pixmaps/mirage.xpm>
+         [exec] (qPDFview) {nice -n 19 qpdfview} #</usr/share/icons/Faenza/mimetypes/16/gnome-mime-application-pdf.png>
+	[exec] (Quod Libet) {nice -n 19 /usr/bin/quodlibet} </usr/share/icons/AwOken/clear/24x24/apps/quodlibet.png>
+	[exec] (mpv) {/usr/bin/mpv} </usr/share/icons/hicolor/16x16/apps/mpv.png>
+	[exec] (dragon) {nice -n 19 /usr/bin/dragon} </usr/share/icons/hicolor/16x16/apps/dragonplayer.png>
+	[exec] (vlc) {nice -n 19 /usr/bin/vlc} </usr/share/vlc/lua/http/images/vlc16x16.png>
+      [end]
+
+[submenu] (Edit)
+	[exec]   (vi) {/usr/bin/roxterm -e vi}
+	[exec]   (vim) {/usr/bin/roxterm -e vim} 
+	[exec]   (geany) {nice -n 19 geany}
+	[exec] (Emacs 24 (X11\)) {/usr/bin/emacs24} <>
+	[exec] (Emacs 24 (text\)) { x-terminal-emulator -T "Emacs 24 (text)" -e /usr/bin/emacs24 -nw} <>
+	[exec] (Nano) { x-terminal-emulator -T "Nano" -e /bin/nano} </usr/share/nano/nano-menu.xpm>
+	[exec]   (kate) {/usr/bin/kate} </usr/share/icons/hicolor/16x16/apps/kate.png>
+[end] 
+
+[submenu] (file) {}
+	[exec] (PCManFM) {nice -n 19 /usr/bin/pcmanfm} <>
+	[exec] (SpaceFM) {nice -n 19 /usr/bin/spacefm} </usr/share/icons/hicolor/48x48/apps/spacefm-48-pyramid-green.png>
+	[exec] (fileRoller) {/usr/bin/file-roller} </usr/share/pixmaps/file-roller.xpm>
+	[exec] (K3b) {/usr/bin/k3b} #</usr/share/pixmaps/k3b.xpm>
+	[exec] (xfburn) {/usr/bin/xfburn} #</usr/share/icons/hicolor/16x16/stock/media/stock_xfburn.png>
+	[exec] (YUMI) {/usr/bin/yumi.gambas} </usr/share/pixmaps/yumi.png>
+[end]
+[submenu] (included) 
+[include] (/etc/X11/fluxbox/fluxbox-menu)
+[end]
+
+[separator]
+[submenu] (Fluxbox)
+	[reconfig] (Reconfigure)
+	[restart] (Restart)
+	[exec] (restart idesk) {/usr/bin/stterm -e  killall idesk && nice -n 19 idesk ||  nice -n 19 idesk}
+	[exec] (resConky) {/usr/bin/stterm -eq killall conky && nice -n 19 conky || nice -n 19 conky} <> 
+	[workspaces] (Workspaces)
+  [submenu] (Window Managers) {}
+   [submenu] (Help) {}
+      [exec] (Info) {/usr/bin/roxterm  -T "Info" -e info} <>
+   [end]
+      [restart] (FluxBox)  {/usr/bin/startfluxbox}
+      [restart] (Pekwm)  {/usr/bin/pekwm}
+   [end]
+
+   [config] (Configuration)
+   [submenu] (Styles) {}
+      [stylesdir] (/usr/share/fluxbox/styles)
+      [stylesdir] (~/.fluxbox/styles)
+   [end]
+[submenu] (exit)
+	[exec] (machine) {~/xt.xt/py/logoutmsg01.py} <>
+	[exit] (Exit)
+
+
+[end]

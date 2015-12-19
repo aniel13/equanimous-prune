@@ -1,0 +1,4 @@
+[app] (name=Navigator) (class=Iceweasel) (role=browser)
+[end]
+[app] (name=gimp) (class=Gimp) (role=gimp-image-window)
+[end]

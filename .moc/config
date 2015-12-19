@@ -1,0 +1,62 @@
+
+
+MusicDir ="/media/amnion/Cathexis/DamnedAlbums/"
+
+ReadTags		= yes
+Sort			= FileName
+ShowStreamErrors	= no
+Mp3IgnoreCRCErrors	= yes
+Repeat			= yes
+Shuffle			= no 
+AutoNext		= yes
+SavePlaylist		= yes
+SyncPlaylist		= yes
+PlaylistNumbering	= yes
+FollowPlayedFile	= yes
+CanStartInPlaylist	= yes
+PlaylistFullPaths	= no
+
+
+Layout1		= directory(0,0,50%,100%):playlist(50%,0,FILL,100%)
+Layout2		= directory(0,0,100%,100%):playlist(0,0,100%,100%)
+Layout3		= playlist(50%,50%,50%,50%)
+
+# Default FormatString:
+# %n - Track number
+# %a - Artist
+# %A - Album
+# %t - Title
+# %(X:TRUE:FALSE) - ternary expression - if X exists, do TRUE, otherwise
+#                   FALSE. '\' - escape character (must be double, because of
+#                   config interpreter). man zshmisc for more info.
+FormatString		= "%(n:%n :)%(a:%a - :)%(t:%t:)%(A: \(%A\):)"
+
+ShowHiddenFiles		= no
+
+StartInMusicDir		= yes
+ShowFormat		= yes
+#yes, no, IfAvailable
+ShowTime		= IfAvailable
+
+ShowTimePercent	= no
+
+# Values of the TERM environment variable which are deemed to be xterms.
+XTerms = xterm
+XTerms += xterm-colour:xterm-color
+XTerms += xterm-256colour:xterm-256color
+XTerms += rxvt:rxvt-unicode
+XTerms += rxvt-unicode-256colour:rxvt-unicode-256color
+XTerms += eterm
+
+# Theme file. This can be absolute path or relative to
+# /usr/share/moc/themes/ (depends on installation prefix) or ~/.moc/themes/
+##Theme			= black_red_theme
+
+# The theme used when running on an xterm.
+XTermTheme		= transparent-background
+
+# Should MOC try to autoload the default lyrics file for an audio?  (The
+# default lyrics file is a text file with the same file name as the audio
+# file name with any trailing "extension" removed.)
+AutoLoadLyrics	= yes
+

@@ -1,0 +1,9 @@
+[submenu]
+[exec] (GPRS-EDGE-UMTS-Panel) {umts-panel} </usr/share/icons/Faenza-Cupertino-mini/devices/32/network-wireless.png>
+[exec] (LilyTerm) {lilyterm} </usr/share/pixmaps/lilyterm.png>
+[exec] (Opera) {/usr/bin/opera } </usr/share/icons/Faenza-Cupertino-mini/apps/32/opera-browser.png>
+[exec] (Personal Menu Help Video) {sh -c "printf 'https://www.youtube.com/watch?v=wwuTtjF6zS0' | xclip | streamlight.sh"} </usr/share/antiX/FAQ/images/antix-logo-3.png>
+[exec] (Sylpheed) {sylpheed } </usr/share/icons/Faenza-Cupertino-mini/apps/32/sylpheed.png>
+[exec] (Turpial) {turpial} </usr/share/pixmaps/turpial.png>
+[exec] (Vim) {desktop-defaults-run -t vim } </usr/share/icons/Faenza-Cupertino-mini/apps/32/vim.png>
+[end]
