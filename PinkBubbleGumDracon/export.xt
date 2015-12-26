@@ -61,7 +61,7 @@ X      +     +        +    o     + 
 if [ "$?" -eq "0" ] ; then 
  if [ $UID -ne $suuid ] ; then echo  "$USER, sudo does /usr/share and font cp." 
 		if [ -d ${FBOX[1]} ] ; then echo "~/.fluxy's.. --! there" 
-			cp -vr ../PlasmaKitten -t ${FBOX[1]} 
+			cp -vr ../PinkBubbleGumDracon -t ${FBOX[1]} 
 		fi
 		#fonts, well.. don't you needs suuid to mingle, no.. doesn't really..
 		#  I could swear by the blue heavens above, which we both adore 
@@ -74,7 +74,7 @@ if [ "$?" -eq "0" ] ; then
 	    type -p fluxbox
 	    if [ $? -eq $suuid ] ; then echo "fluxbox's there"
 		     if [ -d ${FBOX[2]} ] ; then 
-			     [ -d ${FBOX[2]}PlasmaKitten ] && echo "-${FBOX[2]}PlasmaKitten/- already present" || cp -vr ../PlasmaKitten -t ${FBOX[2]}
+			     [ -d ${FBOX[2]}PinkBubbleGumDracon ] && echo "-${FBOX[2]}PinkBubbleGumDracon/- already present" || cp -vr ../PinkBubbleGumDracon -t ${FBOX[2]}
 	     	fi
 
 	     fi
@@ -85,12 +85,36 @@ if [ "$?" -eq "0" ] ; then
 	 #not actually mandatory since it might as use whatever it has to work with 
 	#damnit then will has to ask, intended as a click safe simple something..
 	#bullshit, allgood since user does the possibly smallest damage, so done. 
-fc-list | grep "Aurinko.ttf" 
+fc-list | grep "BLKCHCRY.TTF" 
        if [ $? -ne $suuid ] ; then echo "decided to copy" 
 	       #since can't know the random dir you might use for fonts gonna make it. 
 echo " #since can't know the random dir you might use for fonts gonna make it."
 #so that you know.
-	     mkdir -pv /usr/share/fonts/fonties/ && cp -v ./fonts/Aurinko.ttf -t /usr/share/fonts/fonties/ && fc-cache dir /usr/share/fonts/fonties/ 
+	     mkdir -pv /usr/share/fonts/fonties/ && cp -v ./fonts/BLKCHCRY.TTF -t /usr/share/fonts/fonties/ && fc-cache dir /usr/share/fonts/fonties/ 
+
+	     #have no clue if there are some alts to fc, I mean 
+	    #might be that it's not there, anyway
+     else echo "has this font, good."  
+     fi
+
+fc-list | grep "belligerent.ttf" 
+       if [ $? -ne $suuid ] ; then echo "decided to copy" 
+	       #since can't know the random dir you might use for fonts gonna make it. 
+echo " #since can't know the random dir you might use for fonts gonna make it."
+#so that you know.
+	     mkdir -pv /usr/share/fonts/fonties/ && cp -v ./fonts/belligerent.ttf -t /usr/share/fonts/fonties/ && fc-cache dir /usr/share/fonts/fonties/ 
+
+	     #have no clue if there are some alts to fc, I mean 
+	    #might be that it's not there, anyway
+     else echo "has this font, good."  
+     fi
+
+fc-list | grep "ElliotSix.ttf" 
+       if [ $? -ne $suuid ] ; then echo "decided to copy" 
+	       #since can't know the random dir you might use for fonts gonna make it. 
+echo " #since can't know the random dir you might use for fonts gonna make it."
+#so that you know.
+	     mkdir -pv /usr/share/fonts/fonties/ && cp -v ./fonts/ElliotSix.ttf -t /usr/share/fonts/fonties/ && fc-cache dir /usr/share/fonts/fonties/ 
 
 	     #have no clue if there are some alts to fc, I mean 
 	    #might be that it's not there, anyway
@@ -108,16 +132,24 @@ if [ $UID -ne $suuid ] ; then echo  "$USER, sudo does /usr/share and font cp."
 	type fluxbox 
 	[ $? = "0" ] && printf "fluxboxy alive\n" || printf "fluxy seems to be dead\n" 
 		if [ -d ${FBOX[1]} ] ; then
-			cp -r ../PlasmaKitten -t ${FBOX[1]}  
+			cp -r ../PinkBubbleGumDracon -t ${FBOX[1]}  
 		  rm -f $nyantime	
 	printf "I'll always be there for you <3\n" & sleep 0.55
 		fi
 	else printf "+----Sudo nyanmode! -----+\n"
 	type -p fluxbox
 	 [ $? -eq "0" ] && printf " alive" || printf "dead" 
-	 [ -d ${FBOX[2]} ] && cp -r ../PlasmaKitten -t ${FBOX[2]}
-	fc-list | grep "Aurinko.ttf" 
-	 [ $? != "0" ] && mkdir -p /usr/share/fonts/fonties/ && cp ./fonts/Aurinko.ttf -t /usr/share/fonts/fonties/ && fc-cache dir /usr/share/fonts/fonties/  && echo "copying.." || printf "nyanHappy"
+	 [ -d ${FBOX[2]} ] && cp -r ../PinkBubbleGumDracon -t ${FBOX[2]}
+	fc-list | grep "BLKCHCRY.TTF" 
+	 [ $? != "0" ] && mkdir -p /usr/share/fonts/fonties/ && cp ./fonts/BLKCHCRY.TTF -t /usr/share/fonts/fonties/ && fc-cache dir /usr/share/fonts/fonties/  && echo "copying.." || printf "nyanHappy"
+
+	fc-list | grep "ElliotSix.ttf" 
+	 [ $? != "0" ] && mkdir -p /usr/share/fonts/fonties/ && cp ./fonts/ElliotSix.ttf -t /usr/share/fonts/fonties/ && fc-cache dir /usr/share/fonts/fonties/  && echo "copying.." || printf "nyanHappy"
+
+	fc-list | grep "belligerent.ttf" 
+	 [ $? != "0" ] && mkdir -p /usr/share/fonts/fonties/ && cp ./fonts/belligerent.ttf -t /usr/share/fonts/fonties/ && fc-cache dir /usr/share/fonts/fonties/  && echo "copying.." || printf "nyanHappy"
+
+
 
 	 rm -f $nyantime
  printf "I'll always be there for you <3\n" & sleep 0.55
